@@ -11,6 +11,39 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+
+//i need to split all the string in the array using split method
+/*const splitString= tutorials.map(string =>string.split(" "));
+//console.log(splitString);
+//i have now to capitalize the first letter of every word using charAt() + we have to join the words 
+const capitalize =splitString.map(title=>title.map(word=>word.charAt(0).toUpperCase()+word.slice(1)));
+//console.log(capitalize);
+const join = capitalize.map(title=>title.join(" "));*/
+
+/*const titleCased= function(tutorials) {
+  tutorials.map(title =>
+    {return title.split(" ").map(string=>{
+      return string.charAt(0).toUpperCase()+string.slice(1);})
+      .join(" ")
+    ;
+
+  });
+return tutorials;
 }
+console.log(titleCased(tutorials));*/
+
+
+
+
+const titleCased = ()=> {
+  return tutorials.map(title => {
+    return title
+      .split(" ")
+      .map(string =>string.charAt(0).toUpperCase() + string.slice(1))
+      .join(" ");
+  })
+
+};
+
+console.log(titleCased(tutorials));
+
